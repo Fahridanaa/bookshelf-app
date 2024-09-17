@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Bookshelf App</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Bookshelf App</h1>
+		</header>
+
+		<main>
+			<button
+				type="button"
+				id="add-book-button">
+				Tambahkan Buku
+			</button>
+			<section
+				id="form-section"
+				class="hidden">
+				<h2>Tambah/Edit Buku</h2>
+				<form
+					id="bookForm"
+					data-testid="bookForm">
+					<div>
+						<input
+							id="bookFormTitle"
+							type="text"
+							placeholder="Judul"
+							required
+							data-testid="bookFormTitleInput" />
+					</div>
+					<div>
+						<input
+							id="bookFormAuthor"
+							placeholder="Penulis"
+							type="text"
+							required
+							data-testid="bookFormAuthorInput" />
+					</div>
+					<div>
+						<input
+							id="bookFormYear"
+							type="number"
+							placeholder="Tahun"
+							min="1"
+							max="2024"
+							required
+							data-testid="bookFormYearInput" />
+					</div>
+					<div>
+						<label for="bookFormIsComplete">Selesai dibaca</label>
+						<input
+							id="bookFormIsComplete"
+							type="checkbox"
+							data-testid="bookFormIsCompleteCheckbox" />
+					</div>
+					<div class="button-group">
+						<button
+							id="bookFormReturn"
+							type="button"
+							data-testid="bookFormReturnButton">
+							Return
+						</button>
+						<button
+							id="bookFormSubmit"
+							type="submit"
+							data-testid="bookFormSubmitButton">
+							Submit
+						</button>
+					</div>
+				</form>
+			</section>
+
+			<article id="library">
+				<section id="search-section">
+					<label
+						for="searchBookTitle"
+						id="searchLabel"
+						>Cari Buku:</label
+					>
+					<form
+						id="searchBook"
+						data-testid="searchBookForm">
+						<input
+							id="searchBookTitle"
+							type="text"
+							placeholder="Judul Buku.."
+							data-testid="searchBookFormTitleInput" />
+						<button
+							id="searchSubmit"
+							type="submit"
+							data-testid="searchBookFormSubmitButton"
+							title="search">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								width="16px"
+								height="16px">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+							</svg>
+						</button>
+					</form>
+				</section>
+
+				<section
+					id="incomplete"
+					class="book-shelf">
+					<h2>Belum selesai dibaca</h2>
+
+					<div
+						id="incompleteBookList"
+						data-testid="incompleteBookList"></div>
+				</section>
+
+				<section
+					id="complete"
+					class="book-shelf">
+					<h2>Selesai dibaca</h2>
+
+					<div
+						id="completeBookList"
+						data-testid="completeBookList"></div>
+				</section>
+			</article>
+		</main>
+	</body>
+	<script
+		type="module"
+		src="main.js"></script>
+</html>
